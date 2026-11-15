@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bktpwbedf2d54"]
+
+[ext_resource type="Script" uid="uid://c0w47qcvsypa5" path="res://Scripts/world.gd" id="1_a02cp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f3sb7"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[node name="World" type="Node3D" unique_id=1292658342]
+script = ExtResource("1_a02cp")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1441989083]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1959814742]
+mesh = SubResource("PlaneMesh_gv5m4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ground" unique_id=1791482105]
+shape = SubResource("ConcavePolygonShape3D_f3sb7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=230111093]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Players" type="Node" parent="." unique_id=668118544]
+unique_name_in_owner = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1719530221]
+unique_name_in_owner = true
+spawn_path = NodePath("../Players")

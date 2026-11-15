@@ -1,0 +1,15 @@
+MultiplayerSynchronizer
+MultiplayerSpawner
+Node
+Label
+Button
+LineEdit
+VBoxContainer
+CanvasLayer
+Camera3D
+SpringArm3D
+Node3D
+CollisionShape3D
+MeshInstance3D
+CharacterBody3D
+DirectionalLight3D
